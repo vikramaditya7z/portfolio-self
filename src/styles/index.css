@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Surface Tokens */
+  --color-paper: #F3F0E8;
+  --color-paper-subtle: #ECE8DD;
+  --color-ink: #111111;
+  --color-ink-subtle: #191919;
+
+  /* Accent Vector */
+  --color-signal: #FF4D24;
+  --color-signal-glow: rgba(255, 77, 36, 0.15);
+
+  /* Hairline Dividers */
+  --color-concrete: #D8D5CC;
+  --color-concrete-subtle: #E5E2DA;
+  --color-wire: #262626;
+  --color-wire-subtle: #1F1F1F;
+
+  /* Foreground Tokens */
+  --color-text-paper-primary: #151515;
+  --color-text-paper-secondary: #525252;
+  --color-text-paper-muted: #787670;
+
+  --color-text-ink-primary: #F3F0E8;
+  --color-text-ink-secondary: #A3A3A3;
+  --color-text-ink-muted: #666666;
+
+  /* Easing curves */
+  --ease-editorial: cubic-bezier(0.16, 1.0, 0.3, 1.0);
+  --ease-technical: cubic-bezier(0.25, 1.0, 0.5, 1.0);
+}
+
+@layer base {
+  html {
+    background-color: var(--color-paper);
+    color: var(--color-text-paper-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* Accessible focus styling across all interactive elements */
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  /* Coordinated fluid display headline that accounts for both viewport width AND laptop viewport height */
+  .fluid-display-hero {
+    font-size: clamp(2.75rem, min(7.5vw, 11vh), 7.25rem);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+  }
+
+  .mono-annotation {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+/* Reduced motion global overrides */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
