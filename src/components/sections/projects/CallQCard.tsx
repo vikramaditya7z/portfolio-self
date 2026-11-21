@@ -29,10 +29,10 @@ export const CallQCard: React.FC = () => {
         {/* Left: Narrative */}
         <div className="lg:col-span-5 space-y-4">
           <p className="font-body text-sm sm:text-base text-[#151515] leading-relaxed">
-            Earnings calls contain dense management commentary mixed with financial guidance. Generic language models frequently hallucinate margin percentages, mix forward-looking quarters, or make unsupported comparisons.
+            Evidence-grounded financial intelligence platform to perform structured extraction of facts from earnings calls, validating all claims against source transcript evidence.
           </p>
           <p className="font-body text-sm sm:text-base text-[#525252] leading-relaxed">
-            CallQ enforces strict Pydantic v2 schemas: metric calculations (such as basis-point expansions) are computed deterministically in code, and every extracted fact remains tethered to a verifiable citation span in the raw transcript.
+            Constructed a deterministic financial calculation engine to compute metric changes, margins, guidance, and historical comparisons. Enforces strict comparability checks and a grounded LLM reasoning pipeline supported by 73 passing backend tests.
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export const CallQCard: React.FC = () => {
 
       {/* Action Links */}
       <div className="flex items-center justify-between pt-6 border-t border-[#151515] font-mono text-xs">
-        <span className="text-[#525252]">Pydantic v2 &bull; FastAPI &bull; Deterministic Metric Comparisons</span>
+        <span className="text-[#525252]">Pydantic v2 &bull; FastAPI &bull; Deterministic Metric Engine &bull; 73 Backend Tests</span>
 
         <div className="flex items-center gap-5">
           <a

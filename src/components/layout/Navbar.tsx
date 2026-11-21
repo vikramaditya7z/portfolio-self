@@ -139,7 +139,7 @@ export const Navbar: React.FC = () => {
                 isDarkNav ? 'border-[#262626]' : 'border-[#D8D5CC]'
               }`}
             >
-              FOUR PROJECTS
+              PROJECTS
             </a>
 
             <a

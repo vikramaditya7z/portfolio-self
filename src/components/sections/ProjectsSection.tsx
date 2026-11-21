@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { FinPilotCard } from './projects/FinPilotCard';
+import { KeepSakeCard } from './projects/KeepSakeCard';
 import { CallQCard } from './projects/CallQCard';
 import { MonteCarloCard } from './projects/MonteCarloCard';
-import { KalshiCard } from './projects/KalshiCard';
+import { ArbineCard } from './projects/ArbineCard';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 interface ProjectExhibitionStageProps {
@@ -147,7 +148,7 @@ export const ProjectsSection: React.FC = () => {
           }
           className="font-mono text-xs text-[#525252] max-w-md leading-relaxed"
         >
-          Four software systems built around edge cases, empirical verification, and deterministic constraints.
+          Five software systems built around edge cases, empirical verification, and deterministic constraints.
         </motion.p>
       </div>
 
@@ -160,6 +161,15 @@ export const ProjectsSection: React.FC = () => {
           prefersReducedMotion={prefersReducedMotion}
         >
           <FinPilotCard />
+        </ProjectExhibitionStage>
+
+        <ProjectExhibitionStage
+          theme="light"
+          leadLabel="KEEPSAKE"
+          domainTag="ON-DEVICE FACE RECOGNITION"
+          prefersReducedMotion={prefersReducedMotion}
+        >
+          <KeepSakeCard />
         </ProjectExhibitionStage>
 
         <ProjectExhibitionStage
@@ -182,11 +192,11 @@ export const ProjectsSection: React.FC = () => {
 
         <ProjectExhibitionStage
           theme="light"
-          leadLabel="KALSHI ARBITRAGE ENGINE"
-          domainTag="BINARY CONTRACT PAYOFF MODELING"
+          leadLabel="ARBINE"
+          domainTag="PREDICTION MARKET ARBITRAGE"
           prefersReducedMotion={prefersReducedMotion}
         >
-          <KalshiCard />
+          <ArbineCard />
         </ProjectExhibitionStage>
       </div>
     </section>

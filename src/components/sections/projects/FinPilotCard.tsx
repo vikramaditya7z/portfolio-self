@@ -62,10 +62,10 @@ export const FinPilotCard: React.FC = () => {
         {/* Left: Concise Narrative */}
         <div className="lg:col-span-5 space-y-4">
           <p className="font-body text-sm sm:text-base text-[#D8D5CC] leading-relaxed">
-            High-throughput merchants face transient failures across bank gateways. Manual debugging takes 30+ minutes while customers drop off, but naive automation risks uncontrolled financial mutations.
+            Payment incident intelligence platform to investigate payment failures across payment rails, acquirers, error codes, regions, and time windows.
           </p>
           <p className="font-body text-sm sm:text-base text-[#A3A3A3] leading-relaxed">
-            FinPilot separates probabilistic reasoning from execution: Gemini hypothesizes failure causes and proposes remediation plans, while deterministic boolean gates independently verify invariants before simulated sandbox writes.
+            Architected a fail-closed agentic system where LLM reasoning proposes remediation intents while a deterministic financial verifier and policy engine independently validate financial invariants, authorization, and operational constraints. Tested by 703 backend and 70 integration tests.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export const FinPilotCard: React.FC = () => {
 
       {/* Action Links */}
       <div className="flex items-center justify-between pt-6 border-t border-[#262626] font-mono text-xs">
-        <span className="text-[#787670]">FastAPI &bull; Gemini &bull; SQLite &bull; Razorpay Sandbox</span>
+        <span className="text-[#787670]">FastAPI &bull; Gemini &bull; SQLite &bull; Razorpay TEST &bull; 703 Tests</span>
 
         <div className="flex items-center gap-5">
           <a

@@ -42,10 +42,10 @@ export const MonteCarloCard: React.FC = () => {
         {/* Left: Narrative */}
         <div className="lg:col-span-5 space-y-4">
           <p className="font-body text-sm sm:text-base text-[#D8D5CC] leading-relaxed">
-            Valuing options under uncertainty requires simulating thousands of stochastic asset trajectories. A probabilistic simulation is only credible if its numerical average provably converges to the closed-form Black-Scholes benchmark.
+            Quantitative finance simulator modeling stock price paths using Geometric Brownian Motion, implementing risk-neutral pricing and discounting for European call option payoffs.
           </p>
           <p className="font-body text-sm sm:text-base text-[#A3A3A3] leading-relaxed">
-            Built with vectorized NumPy path operations. At N=100,000 simulated iterations, the empirical Monte Carlo estimate ($6.0199) converges to the theoretical analytical price ($6.0200) within a delta of 0.0001.
+            Conducted convergence analysis to evaluate and compare simulated estimates against the analytical Black-Scholes model. Vectorized NumPy path operations achieve convergence ($6.0199 vs $6.0200) within a delta of 0.0001 at N=100,000 iterations.
           </p>
         </div>
 

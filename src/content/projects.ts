@@ -1,7 +1,7 @@
 /**
  * Verified Projects Registry for SIGNAL / NOISE
- * Source of Truth: Resume, Inspected GitHub Repositories & docs/CONTENT_INVENTORY.md
- * Zero fabricated metrics. All claims verified.
+ * Source of Truth: Updated Resume, Inspected GitHub Repositories & docs/CONTENT_INVENTORY.md
+ * Zero fabricated metrics. All claims verified against source code and test suites.
  */
 
 export interface ProjectData {
@@ -16,7 +16,7 @@ export interface ProjectData {
   techStack: string[];
   status: string;
   isWorkInProgress: boolean;
-  githubUrl: string;
+  githubUrl?: string;
   demoUrl?: string;
   accentColor: string;
 }
@@ -27,14 +27,14 @@ export const PROJECTS: ProjectData[] = [
     number: '01',
     title: 'Merchant FinPilot',
     subtitle: 'Payment Incident Intelligence & Deterministic Verification',
-    problemQuestion: 'What happens when a payment system starts behaving unexpectedly?',
+    problemQuestion: 'What happens when a payment system starts behaving unexpectedly across acquirers?',
     problemSummary:
-      'High-throughput merchants face transient failures across bank gateways and payment methods. Manual investigation takes 30+ minutes while transactions fail, but naive autonomous scripts risk catastrophic uncontrolled mutations.',
+      'High-throughput merchants face transient failures across bank gateways and payment methods. Manual investigation takes 30+ minutes while transactions drop, but naive autonomous scripts risk catastrophic uncontrolled mutations.',
     whatIBuilt:
-      'An incident response platform that detects payment anomalies against historical baselines, clusters dimensional failure patterns, synthesizes remediation proposals via Gemini, and enforces strict deterministic boolean gates before executing test actions.',
+      'A payment incident intelligence platform to investigate payment failures across payment rails, acquirers, error codes, regions, and time windows, backed by a simulated Razorpay sandbox and comprehensive test coverage.',
     engineeringHighlight:
-      'Architectural separation of powers: LLM reasoning proposes candidate hypotheses and intent, while deterministic invariant checks (idempotency enforcement, capture caps, balance verification) independently authorize operations in a simulated Razorpay sandbox.',
-    techStack: ['Python', 'FastAPI', 'React', 'TypeScript', 'Google Gemini', 'SQLite', 'Razorpay Test API'],
+      'Architected a fail-closed agentic system where LLM reasoning proposes remediation intents while a deterministic financial verifier and policy engine independently validate financial invariants, authorization, and operational constraints. Tested by 703 backend tests and 70 integration tests.',
+    techStack: ['Python', 'FastAPI', 'React', 'TypeScript', 'Gemini API', 'SQLite', 'Razorpay TEST API'],
     status: 'Simulation Mode // Complete',
     isWorkInProgress: false,
     githubUrl: 'https://github.com/vikramaditya7z/Merchant_FinPilot',
@@ -42,18 +42,36 @@ export const PROJECTS: ProjectData[] = [
     accentColor: '#FF4D24',
   },
   {
-    id: 'callq',
+    id: 'keepsake',
     number: '02',
+    title: 'KeepSake',
+    subtitle: 'On-Device Face Recognition & Constrained Clustering for macOS',
+    problemQuestion: 'How can an application organize personal photos on-device without cloud leakage or memory runaway?',
+    problemSummary:
+      'Personal photo libraries contain thousands of high-resolution images. Cloud recognition creates privacy vulnerabilities, while naive on-device clustering erroneously merges co-occurring faces and exceeds standard memory bounds.',
+    whatIBuilt:
+      'A native macOS photo organization application emphasizing local processing, independent engineering ownership, and optimal memory management, integrating Apple Vision and an InsightFace Core ML model.',
+    engineeringHighlight:
+      'Constrained hierarchical clustering with cannot-link constraints preventing distinct faces in the same photograph from being grouped. Highly efficient resource utilization with RAM usage below 1 GB while indexing ~785 photos, validated by 282 tests (280 passed, 2 skipped, 0 failures).',
+    techStack: ['Swift', 'SwiftUI', 'Core ML', 'Apple Vision', 'Python', 'ONNX'],
+    status: 'Native macOS App // Complete',
+    isWorkInProgress: false,
+    githubUrl: 'https://github.com/vikramaditya7z/keepsake-f',
+    accentColor: '#FF4D24',
+  },
+  {
+    id: 'callq',
+    number: '03',
     title: 'CallQ',
     subtitle: 'Earnings-Call Evidence Grounding & Financial Fact Extraction',
     problemQuestion: 'How can an AI-generated financial claim be checked against its original source?',
     problemSummary:
-      'Earnings call transcripts contain dense executive commentary mixed with forward-looking financial guidance. Generic LLMs routinely hallucinate basis-point changes, mix up fiscal quarters, or invent metrics without grounding.',
+      'Earnings call transcripts contain dense executive commentary mixed with forward-looking guidance. Generic LLMs routinely hallucinate basis-point changes, mix up fiscal quarters, or invent metrics without grounding.',
     whatIBuilt:
-      'A financial research application that ingests quarterly earnings call transcripts, extracts structured financial metrics into Pydantic models, computes margin differentials deterministically, and anchors every extracted claim to verified transcript citations.',
+      'An evidence-grounded financial intelligence platform to perform structured extraction of facts from earnings calls, validating all claims against source transcript citations.',
     engineeringHighlight:
-      'Strict schema validation using Pydantic ensures zero drift in numeric extraction. Financial arithmetic (e.g. basis point expansions) is calculated deterministically in code rather than delegated to language model token prediction.',
-    techStack: ['React v18', 'TypeScript', 'FastAPI', 'Python 3.9+', 'Pydantic v2', 'Google Gemini'],
+      'Deterministic financial calculation engine to compute metric changes, margins, guidance, and historical comparisons, enforcing comparability checks. Grounded LLM reasoning pipeline generating verified theses strictly from validated facts, supported by 73 passing backend tests.',
+    techStack: ['Python', 'FastAPI', 'React', 'TypeScript', 'Gemini API'],
     status: 'V1.5 Release // Complete',
     isWorkInProgress: false,
     githubUrl: 'https://github.com/vikramaditya7z/callq',
@@ -62,16 +80,16 @@ export const PROJECTS: ProjectData[] = [
   },
   {
     id: 'monte-carlo',
-    number: '03',
-    title: 'Monte Carlo Option Simulator',
+    number: '04',
+    title: 'Monte Carlo Option Pricing Simulator',
     subtitle: 'Stochastic Asset Trajectories & Numerical Benchmark Validation',
     problemQuestion: 'How closely does a simulated random walk agree with mathematical theory?',
     problemSummary:
       'Valuing financial options under uncertainty requires simulating thousands of stochastic asset trajectories. A probabilistic simulation is only credible if its numerical average provably converges to the closed-form Black-Scholes benchmark.',
     whatIBuilt:
-      'A scientific pricing suite that models continuous-time asset price paths using Geometric Brownian Motion, prices European call options via discounted risk-neutral expectation, and measures empirical convergence as sample size scales.',
+      'A quantitative finance simulator modeling stock price paths using Geometric Brownian Motion, implementing risk-neutral pricing and discounting for European call option payoffs.',
     engineeringHighlight:
-      'Vectorized NumPy path generation with variance reduction. Reconciled convergence validation: at N=100,000 iterations, the empirical Monte Carlo estimate ($6.0199) converges to the analytical Black-Scholes benchmark ($6.0200) within a Delta of 0.0001.',
+      'Convergence analysis evaluating simulated estimates against the analytical Black-Scholes model. Vectorized NumPy path operations achieve convergence ($6.0199 vs $6.0200) within 0.0001 delta at N=100,000 iterations.',
     techStack: ['Python', 'NumPy', 'Matplotlib'],
     status: 'Scientific Suite // Complete',
     isWorkInProgress: false,
@@ -79,21 +97,20 @@ export const PROJECTS: ProjectData[] = [
     accentColor: '#FF4D24',
   },
   {
-    id: 'kalshi',
-    number: '04',
-    title: 'Kalshi Arbitrage Engine',
-    subtitle: 'Prediction-Market Contract Modeling & Order Book Research',
-    problemQuestion: 'How should an engine reason about prediction market contracts and prices?',
+    id: 'arbine',
+    number: '05',
+    title: 'Arbine',
+    subtitle: 'Cross-Exchange Prediction Market Arbitrage & Execution Modeling',
+    problemQuestion: 'How can prediction market edges across Kalshi and Polymarket be exploited without settlement risk?',
     problemSummary:
-      'Binary prediction markets trade complementary contracts where YES and NO must theoretically sum to $1.00 (100¢). Transient order book mispricings create potential structural discrepancies that require disciplined risk and fee modeling.',
+      'Prediction markets list equivalent real-world event contracts with differing liquidity, fee schedules, and pricing. Exploiting cross-exchange arbitrage requires deterministic settlement equivalence verification and fee-adjusted execution modeling.',
     whatIBuilt:
-      'An active research system that models binary contract payoff invariants, streams and validates order book structures from Kalshi market data feeds, and builds towards a deterministic paper-trading harness.',
+      'A cross-exchange prediction market arbitrage platform integrating Kalshi and Polymarket APIs to identify and evaluate potential opportunities across equivalent contracts, backed by a simulated paper-trading engine.',
     engineeringHighlight:
-      'Strict mathematical invariant modeling: P(YES) + P(NO) = 1.00. Current active phase focuses on order book depth reconstruction and exchange transaction fee hurdle modeling to assess net executable edges before simulating paper fills.',
-    techStack: ['Python', 'REST Market Data', 'Pydantic', 'PyProject.toml'],
-    status: 'In Active Development',
+      'Deterministic market matching and settlement-equivalence verification with fail-closed validation. Binary complement, binary parity, and multi-outcome arbitrage strategies using Level 2 order-book analysis, VWAP-based execution modeling, slippage modeling, and risk controls.',
+    techStack: ['Python', 'Multi-Exchange APIs', 'Financial Computation'],
+    status: 'Under Development',
     isWorkInProgress: true,
-    githubUrl: 'https://github.com/vikramaditya7z/engine-kal-t-1',
     accentColor: '#FF4D24',
   },
 ];
